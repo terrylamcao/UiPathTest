@@ -1,0 +1,258 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="AnalyticReport" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="io_dt_MainDataPrimary" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="io_dt_MainDataAssociated" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="io_Config" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1324,1596</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>AnalyticReport_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="AnalyticReport" sap:VirtualizedContainerService.HintSize="955,1531" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Default="[New Datatable]" Name="dt_Results" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message Analysis Started" sap:VirtualizedContainerService.HintSize="913,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Report Analysis Started&quot;]" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="913,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="418,158" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="TEST" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="excel" />
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Configures process flow settings in a dictionary variable to be used across the flow." DisplayName="Config_Setup - Initial Setup 1st Try" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Initialize\Config_Setup.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">[io_Config]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">Data\Config.xlsx</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InvokeWorkflowFile>
+            <ui:ReadRange AddHeaders="True" DataTable="[io_dt_MainDataPrimary]" DisplayName="Import data from Excel TEST" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="PrimaryCases" WorkbookPath="C:\Users\TUS5\Documents\Use Cases\OPOLE Bankruptcy\AA Docs\Analytics Reports Test\BankruptcyReport10.03.22.xlsx">
+              <ui:ReadRange.Range>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </ui:ReadRange.Range>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ReadRange>
+            <ui:ReadRange AddHeaders="True" DataTable="[io_dt_MainDataAssociated]" DisplayName="Import data from Excel TEST" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="AssociatedCases" WorkbookPath="C:\Users\TUS5\Documents\Use Cases\OPOLE Bankruptcy\AA Docs\Analytics Reports Test\BankruptcyReport10.03.22.xlsx">
+              <ui:ReadRange.Range>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </ui:ReadRange.Range>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ReadRange>
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:BuildDataTable DataTable="[dt_Results]" DisplayName="Build Data Table AnalysisTable Results" sap:VirtualizedContainerService.HintSize="913,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Month_x002F_Day_x002F_Year&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Chapter7Counter&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Chapter11Counter&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Chapter13Counter&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;SimplePrimaryCasesCounter&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ComplexPrimaryCaseCounter&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ChainCasesCounter&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;MISSuccessCounter&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;MSPCounter&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;NonMSPCounter&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TotalChapter7Counter&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TotalChapter11Counter&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TotalChapter13Counter&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Datetime.Now.ToString(&quot;MM/dd/yyyy&quot;),&#xD;&#xA;io_dt_MainDataPrimary.AsEnumerable.Where(Function(row) (row(&quot;STATUS&quot;).ToString=&quot;MISInserted&quot; Or row(&quot;STATUS&quot;).ToString=&quot;MISDuplicate&quot; Or row(&quot;STATUS&quot;).ToString=&quot;MISError&quot;) And row(&quot;Chapter Number&quot;).ToString=&quot;7&quot;).Count+&#xD;&#xA;If(io_dt_MainDataAssociated.Rows.Count&gt;0,&#xD;&#xA;io_dt_MainDataAssociated.AsEnumerable.Where(Function(row) (row(&quot;Status&quot;).ToString=&quot;MISInserted&quot; Or row(&quot;Status&quot;).ToString=&quot;MISDuplicate&quot; Or row(&quot;Status&quot;).ToString=&quot;MISError&quot;) And row(&quot;Chapter Number&quot;).ToString=&quot;7&quot;).Count,0), &#xD;&#xA;io_dt_MainDataPrimary.AsEnumerable.Where(Function(row) (row(&quot;STATUS&quot;).ToString=&quot;MISInserted&quot; Or row(&quot;STATUS&quot;).ToString=&quot;MISDuplicate&quot; Or row(&quot;STATUS&quot;).ToString=&quot;MISError&quot;) And row(&quot;Chapter Number&quot;).ToString=&quot;11&quot;).Count+&#xD;&#xA;If(io_dt_MainDataAssociated.Rows.Count&gt;0,&#xD;&#xA;io_dt_MainDataAssociated.AsEnumerable.Where(Function(row) (row(&quot;Status&quot;).ToString=&quot;MISInserted&quot; Or row(&quot;Status&quot;).ToString=&quot;MISDuplicate&quot; Or row(&quot;Status&quot;).ToString=&quot;MISError&quot;) And row(&quot;Chapter Number&quot;).ToString=&quot;11&quot;).Count,0),&#xD;&#xA;io_dt_MainDataPrimary.AsEnumerable.Where(Function(row) (row(&quot;STATUS&quot;).ToString=&quot;MISInserted&quot; Or row(&quot;STATUS&quot;).ToString=&quot;MISDuplicate&quot; Or row(&quot;STATUS&quot;).ToString=&quot;MISError&quot;) And row(&quot;Chapter Number&quot;).ToString=&quot;13&quot;).Count+&#xD;&#xA;If(io_dt_MainDataAssociated.Rows.Count&gt;0,&#xD;&#xA;io_dt_MainDataAssociated.AsEnumerable.Where(Function(row) (row(&quot;Status&quot;).ToString=&quot;MISInserted&quot; Or row(&quot;Status&quot;).ToString=&quot;MISDuplicate&quot; Or row(&quot;Status&quot;).ToString=&quot;MISError&quot;) And row(&quot;Chapter Number&quot;).ToString=&quot;13&quot;).Count,0),&#xD;&#xA;io_dt_MainDataPrimary.AsEnumerable.Where(Function(row) (row(&quot;STATUS&quot;).ToString=&quot;MISInserted&quot; Or row(&quot;STATUS&quot;).ToString=&quot;MISDuplicate&quot; Or row(&quot;STATUS&quot;).ToString=&quot;MISError&quot;) And row(&quot;HasAssociatedCases&quot;).ToString&lt;&gt;&quot;TRUE&quot;).Count,&#xD;&#xA;io_dt_MainDataPrimary.AsEnumerable.Where(Function(row) (row(&quot;STATUS&quot;).ToString=&quot;MISInserted&quot; Or row(&quot;STATUS&quot;).ToString=&quot;MISDuplicate&quot; Or row(&quot;STATUS&quot;).ToString=&quot;MISError&quot;) And row(&quot;HasAssociatedCases&quot;).ToString=&quot;TRUE&quot;).Count,&#xD;&#xA;If(io_dt_MainDataAssociated.Rows.Count&gt;0,&#xD;&#xA;io_dt_MainDataAssociated.AsEnumerable.Where(Function(row) row(&quot;Status&quot;).ToString=&quot;MISInserted&quot; Or row(&quot;Status&quot;).ToString=&quot;MISDuplicate&quot; Or row(&quot;Status&quot;).ToString=&quot;MISError&quot;).Count,0),&#xD;&#xA;If(io_dt_MainDataAssociated.Rows.Count&gt;0,&#xD;&#xA;io_dt_MainDataAssociated.AsEnumerable.Where(Function(row) row(&quot;Status&quot;).ToString=&quot;MISInserted&quot;).Count + io_dt_MainDataPrimary.AsEnumerable.Where(Function(row) row(&quot;STATUS&quot;).ToString=&quot;MISInserted&quot;).Count,0),&#xD;&#xA;io_dt_MainDataPrimary.AsEnumerable.Where(Function(row) (row(&quot;STATUS&quot;).ToString=&quot;MISInserted&quot; Or row(&quot;STATUS&quot;).ToString=&quot;MISDuplicate&quot; Or row(&quot;STATUS&quot;).ToString=&quot;MISError&quot;) And row(&quot;Bankruptcy Type&quot;).ToString=&quot;MSP&quot;).Count,&#xD;&#xA;io_dt_MainDataPrimary.AsEnumerable.Where(Function(row) (row(&quot;STATUS&quot;).ToString=&quot;MISInserted&quot; Or row(&quot;STATUS&quot;).ToString=&quot;MISDuplicate&quot; Or row(&quot;STATUS&quot;).ToString=&quot;MISError&quot;) And row(&quot;Bankruptcy Type&quot;).ToString=&quot;Non-MSP&quot;).Count,&#xD;&#xA;io_dt_MainDataPrimary.AsEnumerable.Where(Function(row) row(&quot;Chapter Number&quot;).ToString=&quot;7&quot;).Count+&#xD;&#xA;If(io_dt_MainDataAssociated.Rows.Count&gt;0,&#xD;&#xA;io_dt_MainDataAssociated.AsEnumerable.Where(Function(row) row(&quot;Chapter Number&quot;).ToString=&quot;7&quot;).Count,0),&#xD;&#xA;io_dt_MainDataPrimary.AsEnumerable.Where(Function(row)  row(&quot;Chapter Number&quot;).ToString=&quot;11&quot;).Count+&#xD;&#xA;If(io_dt_MainDataAssociated.Rows.Count&gt;0,&#xD;&#xA;io_dt_MainDataAssociated.AsEnumerable.Where(Function(row) row(&quot;Chapter Number&quot;).ToString=&quot;11&quot;).Count,0),&#xD;&#xA;io_dt_MainDataPrimary.AsEnumerable.Where(Function(row) row(&quot;Chapter Number&quot;).ToString=&quot;13&quot;).Count+&#xD;&#xA;If(io_dt_MainDataAssociated.Rows.Count&gt;0,&#xD;&#xA;io_dt_MainDataAssociated.AsEnumerable.Where(Function(row)  row(&quot;Chapter Number&quot;).ToString=&quot;13&quot;).Count,0)}]" DataTable="[dt_Results]" DisplayName="Add Data Row Results" sap:VirtualizedContainerService.HintSize="913,185" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+    <If Condition="[File.Exists(io_Config(&quot;AnalyticReportPath&quot;).ToString)]" DisplayName="If File Exists Append Row" sap:VirtualizedContainerService.HintSize="913,310" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <ui:AppendCsvFile DataTable="[dt_Results]" Delimitator="Comma" DisplayName="Append to CSV Results" FilePath="[io_Config(&quot;AnalyticReportPath&quot;).ToString]" sap:VirtualizedContainerService.HintSize="434,132" sap2010:WorkflowViewState.IdRef="AppendCsvFile_1" />
+      </If.Then>
+      <If.Else>
+        <ui:WriteCsvFile AddHeaders="False" DataTable="[dt_Results]" Delimitator="Comma" DisplayName="Write CSV Results" FilePath="[io_Config(&quot;AnalyticReportPath&quot;).ToString]" sap:VirtualizedContainerService.HintSize="434,152" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" ShouldQuote="True" />
+      </If.Else>
+    </If>
+    <TryCatch sap2010:Annotation.AnnotationText="Confirms whether or not the EMAIL was processed" DisplayName="Try Stage Confirmation EMAIL" sap:VirtualizedContainerService.HintSize="913,412" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Confirms the Stage which the bot is supposed to start from in case of Crashes" DisplayName="Stage Confirmation EMAIL" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\StageConfirmation.xaml">
+          <ui:InvokeWorkflowFile.Arguments>
+            <InArgument x:TypeArguments="x:String" x:Key="in_ConfigPath">[io_Config("ConfigPath").ToString]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="Stage">EMAIL</InArgument>
+            <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_Config">[io_Config]</InOutArgument>
+          </ui:InvokeWorkflowFile.Arguments>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:InvokeWorkflowFile>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Failed to Confirm EMAIL" sap:VirtualizedContainerService.HintSize="480,776" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message Failed to Confirm EMAIL" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Failed to confirm CLEAN: &quot;+exception.Message+&quot; At source: &quot;+exception.Source]" />
+              <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process Excel EMAIL" sap:VirtualizedContainerService.HintSize="438,132" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="excel" />
+              <TryCatch DisplayName="Try Catch 2nd Try EMAIL" sap:VirtualizedContainerService.HintSize="438,381" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                <TryCatch.Try>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Confirms the Stage which the bot is supposed to start from in case of Crashes" DisplayName="Stage Confirmation EMAIL" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Process\StageConfirmation.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_ConfigPath">[io_Config("ConfigPath").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Stage">EMAIL</InArgument>
+                      <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_Config">[io_Config]</InOutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InvokeWorkflowFile>
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Failed to Confirm EMAIL" sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message Failed to Confirm EMAIL" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;Failed to Update Stage to EMAIL. Final Attempt. &quot;+exception.Message+&quot; At source: &quot;+exception.Source]" />
+                        <Rethrow DisplayName="Rethrow Failed to Confirm EMAIL" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+                      </Sequence>
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+              </TryCatch>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Log Message Analysis Finished" sap:VirtualizedContainerService.HintSize="913,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Report Analysis Finished&quot;]" />
+  </Sequence>
+</Activity>

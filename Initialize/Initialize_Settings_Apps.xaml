@@ -1,0 +1,517 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Initialize_Settings_Apps" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_logInStatus" Type="OutArgument(x:String)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1390,5429</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Initialize_Settings_Apps_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="78">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>SetConfigLib</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>Microsoft.Activities.Expressions</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="82">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>SetConfigLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OmniPage.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>Microsoft.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Initialize_Settings_Apps" sap:VirtualizedContainerService.HintSize="1024,5364" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="CrashPopup" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message Initialization" sap:VirtualizedContainerService.HintSize="982,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Initializing All  Applications&quot;]" />
+    <TryCatch DisplayName="Try Catch Login Process" sap:VirtualizedContainerService.HintSize="982,5141" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <TryCatch.Try>
+        <Sequence DisplayName="Initialize Settings and Login Main Sequence" sap:VirtualizedContainerService.HintSize="944,4914" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message Checking Application State" sap:VirtualizedContainerService.HintSize="902,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Checking if &quot;+If(in_Config(&quot;Stage&quot;).ToString.Contains(&quot;BCRS&quot;),&quot;BCRS&quot;,&quot;PECOS&quot;)+&quot; is logged In.&quot;]" />
+          <uix:NCheckState DisplayName="Check App State BCRS/PECOS Timeout" sap:VirtualizedContainerService.HintSize="902,876" sap2010:WorkflowViewState.IdRef="NCheckState_3" Version="V1">
+            <uix:NCheckState.IfExists>
+              <Sequence DisplayName="Close Tab for PECOS/BCRS - Time Out" sap:VirtualizedContainerService.HintSize="514,620" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message BCRS Time out" sap:VirtualizedContainerService.HintSize="472,91" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Closing &quot;+If(in_Config(&quot;Stage&quot;).ToString.Contains(&quot;BCRS&quot;),&quot;BCRS&quot;,&quot;PECOS&quot;)+&quot; Tab - Time out&quot;]" />
+                <TryCatch DisplayName="Try Catch Close BCRS/PECOS Tab" sap:VirtualizedContainerService.HintSize="472,395" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                  <TryCatch.Try>
+                    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe CMS' Close Tab Time out" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="29cdeeab805b7f1287f91aea384d3dc7" Selector="&lt;html app='chrome.exe' title='CMS Enterprise Portal - My Portal' /&gt;">
+                      <ui:BrowserScope.Body>
+                        <ActivityAction x:TypeArguments="x:Object">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                          </ActivityAction.Argument>
+                          <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab Enterprise Portal" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_2" />
+                        </ActivityAction>
+                      </ui:BrowserScope.Body>
+                    </ui:BrowserScope>
+                  </TryCatch.Try>
+                  <TryCatch.Catches>
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ActivityAction x:TypeArguments="s:Exception">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Failed to close bcrs tab" sap:VirtualizedContainerService.HintSize="376,509" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message Failed to Close BCRS tab" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Warn" Message="[&quot;Failed to close BCRS tab - time out. Killing Chrome process.&quot;]" />
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TakeScreenshot Failed to close BCRS Tab" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_TransItemName">Time Out - Close BCRS Tab</InArgument>
+                              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                          </ui:InvokeWorkflowFile>
+                          <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process Chrome" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="chrome" />
+                        </Sequence>
+                      </ActivityAction>
+                    </Catch>
+                  </TryCatch.Catches>
+                </TryCatch>
+              </Sequence>
+            </uix:NCheckState.IfExists>
+            <uix:NCheckState.IfNotExists>
+              <ui:LogMessage DisplayName="LogMessage PECOS/BCRS Not Timed Out" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;No time out warning found for &quot;+If(in_Config(&quot;Stage&quot;).ToString.Contains(&quot;BCRS&quot;),&quot;BCRS&quot;,&quot;PECOS&quot;)]" />
+            </uix:NCheckState.IfNotExists>
+            <uix:NCheckState.Target>
+              <uix:TargetAnchorable DesignTimeRectangle="760, 121, 416, 20" ElementType="Text" FriendlyName="'Your browser'" FullSelectorArgument="&lt;ctrl name='portal.cms.cmsnet says' role='dialog' /&gt;&lt;ctrl name='Your browser has been idle for 15 minutes.*' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='portal.cms.cmsnet says' role='dialog' /&gt;&lt;ctrl name='Your browser has been idle for 15 minutes.*' role='text' automationid='' check:text='Your browser has been idle for 15 minutes.  You will be logged out.' /&gt;" Guid="c577b897-bc3b-482f-9633-ba4ac9195d98" ImageBase64="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" InformativeScreenshot="ddd1dbe82b9fc5799000fd82ac46d4c9.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='CMS Enterprise Portal - My Portal - Google Chrome' /&gt;" SearchSteps="Selector" />
+            </uix:NCheckState.Target>
+          </uix:NCheckState>
+          <Switch x:TypeArguments="x:String" DisplayName="Switch BCRS / PECOS" Expression="[If(in_Config(&quot;Stage&quot;).ToString.Contains(&quot;BCRS&quot;),&quot;BCRS&quot;,&quot;PECOS&quot;)]" sap:VirtualizedContainerService.HintSize="902,1031" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+            <Switch.Default>
+              <Throw DisplayName="Throw Missing Status Stage" Exception="[New Exception (&quot;Missing Stage Status&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_6" />
+            </Switch.Default>
+            <Sequence x:Key="BCRS" DisplayName="BCRS Process" sap:VirtualizedContainerService.HintSize="806,825" sap2010:WorkflowViewState.IdRef="Sequence_21">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message BCRS URL" sap:VirtualizedContainerService.HintSize="764,91" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Trace" Message="[&quot;Assigning BCRS URL&quot;]" />
+              <Assign DisplayName="Assign BCRS URL" sap:VirtualizedContainerService.HintSize="764,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Object">[in_Config("EnterprisePortal_Url")]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Object">[in_Config("EnterprisePortal_BCRSUrl").ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <uix:NCheckState DisplayName="Check App State BCRS" sap:VirtualizedContainerService.HintSize="764,502" sap2010:WorkflowViewState.IdRef="NCheckState_4" Version="V1">
+                <uix:NCheckState.IfExists>
+                  <Sequence DisplayName="Logged In BCRS" sap:VirtualizedContainerService.HintSize="376,286" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message User is Already Logged in BCRS" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;The user is already logged in - BCRS&quot;]" />
+                    <Assign DisplayName="Assign Logged In Status BCRS" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_6">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_logInStatus]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">LoggedIn</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </uix:NCheckState.IfExists>
+                <uix:NCheckState.IfNotExists>
+                  <ui:LogMessage DisplayName="Log Message User is not Logged in BCRS" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_27" Level="Info" Message="[&quot;The user is not logged in - BCRS&quot;]" />
+                </uix:NCheckState.IfNotExists>
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable BrowserURL="https://portal.cms.cmsnet/verticalResponse/bcrs-web/home.jsf" DesignTimeRectangle="1290, 136, 626, 18" FriendlyName="'BTAB8 (CORO) - BCRS'" FullSelectorArgument="&lt;webctrl id='obj_bcrs_w*b_bcrs' tag='IFRAME' /&gt;&lt;webctrl aaname='*- BCRS*' innertext='*- BCRS*' /&gt;" FuzzySelectorArgument="&lt;webctrl id='obj_bcrs_w*b_bcrs' tag='IFRAME' /&gt;&lt;webctrl aaname='*- BCRS*' innertext='*- BCRS*' tag='DIV' type='' check:text='BTAB8 (CORO) - BCRS' /&gt;" Guid="49b73fcb-0f9b-4eff-a417-9869f6fa26aa" ImageBase64="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" InformativeScreenshot="c0107259b2539b4a66f127387e3fc359.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CMS Enterprise Portal - My Portal' /&gt;" SearchSteps="Selector">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="1807, 80, 111, 49" ElementType="Text" FriendlyName="'Log Out'" FullSelectorArgument="&lt;webctrl aria-role='button' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='button' tag='A' type='' aaname='Log Out' check:text='Log Out' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHMAAAA1CAYAAAByQtSXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMISURBVHhe7ZcxaxsxFID9F/wjugXTP5DMHrKU0D9wk9dSPAQ6xNkCmTrUU7KUjAFTCpk8XYfgrc1QTFtDcYaWQrHB4GR6lfR0Pkmn893VMo6f34NvsO7dnaRPTzrXvn3/AQwNavXGC2BowDIJwTIJwTIJwTIJwTIJwTIJwTIJwTIJwTIJwTIJwTIJwTIJwTIJwTIJwTIJwTIJwTIJwTIJwTIJwTIJEU7myy5cfx7Dr+kjzB8097cQOXn7rQ7sO21MGMLIbF5APIVsTO/g2Mg76o1hLprnoz4cGe1MGILIPLz5jfJgBl/6MVzfaN53obHI61rC56MYoqb9HD99GIr8yeDCc239XI2wv4sQC9GXVwwu+GHPdy0MQWQeD2alBtpoxzB8wFQZ5YRuSia+195dkh1oDFdWbhmIyVS0PsCgUoVuRqaqSOeYQLTkyhWK922nzEhI+zNLP4YsMD2J5ULLyHTPbF/laAmZyM/NeyeON71PiXfkqpxkMYhvhUxUXgzFrE/m2R1MsLVUTAZd65kpRTK1JOPd2J8ZxGdJjpZt5ORXnkD13bzfQclJrxfKVGA/t7My27fwE1uLYzqCy5b9zJRqVYI48vTCsiZSteWcfY6sDM7z6MvMpQOXX3W+jKUiJctl5lWYPZlcmaUpLbPZhY/3j5gro1CkZAWZZuXpalpEnkhFtd2AlMzo01/RTRFSzuk5RG1N65WRdy5EYpqKUiIl1SYWcSsRf1eZSCXIuw1jfzJVTkVmPRIddb5QVViDeQPvku21tEjJcpm+yUXB5jb5PxOpn2uNQS8SR7K7oPC3CN+9jvSQhJEpaJzGMFQDNcIajKQDJ70+nJQWKdGT6olUTjLJSXgqyvf3QEbB5GKFGuHNt9+vFp58nzt+sw+ZuVmdYDKfNHlfrkUfOlvGk5b5fO81HO69XZm8vxrmuei7b92YfQnBblSmYHGOmbHG82sT7IzMXYBlEoJlEoJlEoJlEoJlEoJlEoJlEoJlEoJlEoJlEoJlEoJlEoJlEqJWf3YADAUO4B9uFwgWCGi0RQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NCheckState.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NCheckState>
+            </Sequence>
+            <Sequence x:Key="PECOS" DisplayName="PECOS Process" sap:VirtualizedContainerService.HintSize="806,825" sap2010:WorkflowViewState.IdRef="Sequence_22">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message BCRS URL" sap:VirtualizedContainerService.HintSize="764,91" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Trace" Message="[&quot;Assigning PECOS URL&quot;]" />
+              <Assign DisplayName="Assign PECOS URL" sap:VirtualizedContainerService.HintSize="764,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Object">[in_Config("EnterprisePortal_Url")]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Object">[in_Config("EnterprisePortal_PECOSUrl").ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <uix:NCheckState DisplayName="Check App State PECOS" sap:VirtualizedContainerService.HintSize="764,502" sap2010:WorkflowViewState.IdRef="NCheckState_5" Version="V1">
+                <uix:NCheckState.IfExists>
+                  <Sequence DisplayName="Logged In PECOS" sap:VirtualizedContainerService.HintSize="376,286" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message User is Already Logged in PECOS" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[&quot;The user is already logged in - PECOS&quot;]" />
+                    <Assign DisplayName="Assign Logged In Status PECOS" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_7">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_logInStatus]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">LoggedIn</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </uix:NCheckState.IfExists>
+                <uix:NCheckState.IfNotExists>
+                  <ui:LogMessage DisplayName="Log Message User is not Logged in PECOS" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_28" Level="Info" Message="[&quot;The user is not logged in - PECOS&quot;]" />
+                </uix:NCheckState.IfNotExists>
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable BrowserURL="https://portal.cms.gov/verticalResponse/pecosai/rulesOfBehavior.action#headingLv1" DesignTimeRectangle="710, 169, 501, 14" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'PECOS Administrative'" FullSelectorArgument="&lt;webctrl id='obj_pecosai_wab_application' tag='IFRAME' /&gt;&lt;webctrl isleaf='1' parentid='main' tag='DIV' aaname='*PECOS Administrative Interface*' /&gt;" FuzzySelectorArgument="&lt;webctrl id='obj_pecosai_wab_application' tag='IFRAME' /&gt;&lt;webctrl isleaf='1' parentid='main' tag='DIV' type='' class='title headerColumn floatL' aaname=' &amp;#x9;&amp;#x9;&amp;#x9;PECOS Administrative Interface &amp;#x9;&amp;#x9;' check:innerText='PECOS Administrative Interface' /&gt;" Guid="c34d4cab-0820-4722-87d5-3eabead4d5ce" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAfkAAAASCAYAAABYQqcRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAR5SURBVHhe7ZtfbtswDMZ32pypZ2iv0fYK6QGK5C1veWjRwYsskRL/SJYbCxmMj8APWy2ZpCiBn1xsfw6HpwkAAAAA+wMiDwAAAOwUiDwAAACwUyDyYAgvH1+Tb5fpdXFOsDxv5vlzuqYRstNbMZ7wfHrzDofjdErj0VQ8l+Kd6+f04s4pSfO75lpoLdePd3fcQDXqjvc+Ha9f0/HZG1vB22Wazsf0M9Wop54rofVxrB5CPnfmEtbHNmBdAAwEIg+G0CPg3SIvmqy0UgBfz+mhZ0IYgril58IWGrjIo0cc7xP5sVAN7hR5qskq4f0lq0V+mwtHPFcbXIYAeAAQeTAE/ytUCkvflyo1avlFni8IqYGzAKtm7D03X7xZ9P2v/kDO/XSu511eNE5vUuRp7PRR/FYiCVZ+L+ep65N//uSa9K6LLK7PPg8x2P/5kvKT+8RG/sWlJ1jYi1JYKU4psrmOlLe8nDUEWYl8ux753JDR3lbjcf0u0ykWYPr5G/9kU7HZ1EVOjhd7FKA4ydrnH4D7gMiDIeQGfKfIV78Ugy8rFJ5Ic8NlH1kAuhtsKaBGTCOm8ZOleVJcsl1v6xCW5uv6LPnXIu/HCzVrizxb8GOEPNqc06LI55x5X3pypPVo6N2a0JLN7/si34xH/tl+put3+itZiN2qSTWvdFZNjGjeuQVgCyDyYAjVBhwsNdXmHNXI203Qfh0KlDgEbLOvvJugPGIj9+JlUeFcSQy0oBmRSl+TLABSII14GFFS74t4tXXZNRj/HvrSpX9WIq9rL9eU5hbxaNzd74qvaj10Lkvx+P2yZgtnKyBqQDFtXcOa7fpsTgBsCUQeDIEbsDanwbrmioKNE1kv8gEvvn+ZqAsi50UxRLOWDZxE3lwCOC8pSjqGrQXl5Ys8+2cjsSvfbayphAUwGeW8JPIix0q+jjVzqJ4N5V/nshRP10/4dM6WVxPXR8b9TcJslDMA2wKRB0NoCkaiZ44VESI2XxJMI6AFFMf6IKiRV+Y0xMEIyP8k8glef7IY34qXux86x6Wfjchnv/xvEWhuq67sr4Dmp7HFeqwQ+dmnWz9bp2YNKntA1EXeuUQAsAEQeTAEVzAUPXNyo5YCTu9yc6RGq5slP2+Ja+VZot6Yo0W/Nk/O8cEiz4h4fSKvc+Y1Uc4La5ifKXHl9dPcWr4a8pNiLdbD5LIQr1Pk2zWhmP4+09xcAwDGApEHQ/AEQ8PN0TUrPp55guQai1AgN2JttvnSXHV5uCGbeyPPh4g8jVmL8dV4IUBdNaWcaQ2zhRrJNVg/teel2VrP/Frko4V5zXgrRd5Y8xyoGNr4DACwLRB5MARPMDR+MyRTjd5pjt7XkOfT/2qyQu/OIxHzvv44pyxcpQDwf+16iMiX49nEfpQCfcvB37OyTmFPtJCWMcK4L/J2rRktmv5+3aD1KTGt1qOYE4zmVeOZ+pU+y/O4VBN7DsWa9Fn2zhYAGwGRBwAAAHYKRB4AAADYKRB5AAAAYKdA5AEAAICdApEHAAAAdsnT9A/1Sl8nWfupiwAAAABJRU5ErkJggg==" InformativeScreenshot="e9e81ea40c0b90684617747138752d3f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CMS Enterprise Portal - My Portal' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                </uix:NCheckState.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NCheckState>
+            </Sequence>
+          </Switch>
+          <If Condition="[out_logInStatus&lt;&gt;&quot;LoggedIn&quot;]" DisplayName="If Login Process Needed" sap:VirtualizedContainerService.HintSize="902,1457" sap2010:WorkflowViewState.IdRef="If_9">
+            <If.Then>
+              <Sequence DisplayName="Not Logged In - BCRS/PECOS Sequence" sap:VirtualizedContainerService.HintSize="526,1270" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message BCRS/PECOS is Not Logged In" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[If(in_Config(&quot;Stage&quot;).ToString.Contains(&quot;BCRS&quot;),&quot;BCRS&quot;,&quot;PECOS&quot;)+&quot; is not logged In.&quot;]" />
+                <TryCatch DisplayName="Try Catch Log In Process Enterprise Portal" sap:VirtualizedContainerService.HintSize="484,381" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                  <TryCatch.Try>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Attempts to Log in to Enterprise portal and retrieved MFA code." DisplayName="Log In Process Enterprise Portal" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Initialize\LogInProcess.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <OutArgument x:TypeArguments="x:String" x:Key="out_Status">[out_logInStatus]</OutArgument>
+                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:InvokeWorkflowFile>
+                  </TryCatch.Try>
+                  <TryCatch.Catches>
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ActivityAction x:TypeArguments="s:Exception">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Failed To Log In Process Enterprise Portal" sap:VirtualizedContainerService.HintSize="376,428" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message Failed to Log In Process Enterprise Portal" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Error" Message="[&quot;Failed to Login Enterprise Portal. Exception &quot;+exception.Message+&quot; at source &quot;+exception.Source]" />
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Takes screenshot of a possible system crash" DisplayName="TakeScreenshot &quot;Initialize\LogInProcess.xaml&quot;" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_TransItemName">Login Attemp - Failed</InArgument>
+                              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:InvokeWorkflowFile>
+                          <Throw DisplayName="Throw &quot;Initialize\LogInProcess.xaml&quot;" Exception="[New Exception(&quot;MESSAGE: &quot;+exception.Message+&quot;,SOURCE: &quot;+exception.Source+&quot;,MODULE: &quot;+&quot;Initialize\LogInProcess.xaml&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                        </Sequence>
+                      </ActivityAction>
+                    </Catch>
+                  </TryCatch.Catches>
+                </TryCatch>
+                <If Condition="[out_logInStatus=&quot;LoggedIn&quot; And in_Config(&quot;Stage&quot;).ToString.Contains(&quot;BCRS&quot;)]" DisplayName="If Logged In BCRS " sap:VirtualizedContainerService.HintSize="484,293" sap2010:WorkflowViewState.IdRef="If_7">
+                  <If.Then>
+                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click BCRS" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b0591e3f-3d77-41cd-8120-0cf8f7cba155" InformativeScreenshot="ef11adce50b2f6f5c9fce653bb8d5f2e" Selector="&lt;html app='chrome.exe' title='CMS Enterprise Portal - My Portal' /&gt;&lt;webctrl parentid='sub-links' tag='SPAN' /&gt;&lt;nav up='2' /&gt;&lt;webctrl id='mp_bcrs_verticalRedirect/bcrs' aaname='BCRS' innertext='BCRS' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:Click.Target>
+                    </ui:Click>
+                  </If.Then>
+                </If>
+                <If Condition="[out_logInStatus=&quot;LoggedIn&quot; And in_Config(&quot;Stage&quot;).ToString=&quot;PECOS&quot;]" DisplayName="If Logged In PECOS" sap:VirtualizedContainerService.HintSize="484,293" sap2010:WorkflowViewState.IdRef="If_8">
+                  <If.Then>
+                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click PECOS TO BE PROGRAMMED" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b0591e3f-3d77-41cd-8120-0cf8f7cba155" InformativeScreenshot="c194c4a56acaefa7ac1372dfe01962ef" Selector="&lt;html app='chrome.exe' title='CMS Enterprise Portal - My Portal' /&gt;&lt;webctrl id='mp_pecosai_verticalRedirect/application' tag='A' aaname='Application' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:Click.Target>
+                    </ui:Click>
+                  </If.Then>
+                </If>
+              </Sequence>
+            </If.Then>
+          </If>
+          <ui:UiElementExists DisplayName="Element Exists Crash Pop up" Exists="[CrashPopup]" sap:VirtualizedContainerService.HintSize="902,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+            <ui:UiElementExists.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ae63f721-35ae-49ef-84a5-512ce55428e2" InformativeScreenshot="03cf7bd09624950cf1f77e60af7ac061" Selector="&lt;wnd app='chrome.exe' title='Restore pages?' /&gt;&lt;ctrl name='Restore pages?' role='alert' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" TimeoutMS="[Cint(in_Config(&quot;Exception_CloseCrashChromeClick&quot;).ToString)]">
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:UiElementExists.Target>
+          </ui:UiElementExists>
+          <If Condition="[CrashPopup]" DisplayName="If Crash Pop Up Exists" sap:VirtualizedContainerService.HintSize="902,743" sap2010:WorkflowViewState.IdRef="If_10">
+            <If.Then>
+              <TryCatch DisplayName="Try Catch Close Crash pop up" sap:VirtualizedContainerService.HintSize="438,556" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <TryCatch.Try>
+                  <Sequence DisplayName="Close chrome crash pop up" sap:VirtualizedContainerService.HintSize="376,329" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message &quot;Closing chrome crash pop up warning.&quot;" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Info" Message="[&quot;Closing chrome crash pop up warning.&quot;]" />
+                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click  Close Chrome Crash Warning" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="36d8406c-c76d-4626-930c-5517850cf902" InformativeScreenshot="b4abac2ee9c57500da2527eae080ae80" Selector="&lt;wnd app='chrome.exe' title='Restore pages?' /&gt;&lt;ctrl name='Restore pages?' role='alert' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" TimeoutMS="[Cint(in_Config(&quot;Exception_CloseCrashChromeClick&quot;).ToString)]">
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:Click.Target>
+                    </ui:Click>
+                  </Sequence>
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                      <ui:LogMessage DisplayName="Log Message Close Crash Pop up Failed" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="Warn" Message="[&quot;Close Chrome Crash pop up. &quot;+exception.Message+ &quot; at source &quot;+exception.Source]" />
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+              </TryCatch>
+            </If.Then>
+          </If>
+          <If Condition="[out_logInStatus=&quot;LoggedIn&quot;]" DisplayName="If Successful Login" sap:VirtualizedContainerService.HintSize="902,278" sap2010:WorkflowViewState.IdRef="If_2">
+            <If.Then>
+              <ui:LogMessage DisplayName="Log Message Initialization Complete" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;All applications have been initialized.&quot;]" />
+            </If.Then>
+          </If>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="948,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Failed to Login" sap:VirtualizedContainerService.HintSize="376,345" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message Failed to Login" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Fatal" Message="[&quot;Failed to initialize Settings and Login: &quot;+ exception.Message +vbCrLf+&quot;At Source: &quot; +exception.Source]" />
+              <Throw DisplayName="Throw Read &quot;Initialize\Initialize_Settings_Apps.xaml&quot;" Exception="[New Exception(&quot;MESSAGE: &quot;+exception.Message+&quot;,SOURCE: &quot;+exception.Source+&quot;,MODULE: &quot;+&quot;Login Attemp - Failed&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+              <Assign DisplayName="Assign Failed to Login - in_loggedIn = False" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_logInStatus]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">
+                    <Literal x:TypeArguments="x:String" Value="" />
+                  </InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

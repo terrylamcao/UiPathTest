@@ -1,0 +1,11 @@
+Gettting email date today
+"[Received] >= '" + DateTime.Today.ToString("d") + " 00:00AM'"
+
+Getting email previous Date
+"[ReceivedTime] >=' + Now.AddDays(-1) +'"
+
+
+Get email today and specific subject
+"@SQL=%today(urn:schemas:httpmail:datereceived)% AND urn:schemas:httpmail:subject Like '%e-QIP Release%'"
+
+

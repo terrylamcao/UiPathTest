@@ -1,0 +1,18 @@
+1.GETEMAILINFO
+2.EUAPROCESS
+3.SENDPIVEMAIL
+4.STATUSEMAIL
+
+"Hello Team,"+
+Environment.NewLine+
+Environment.NewLine+
+If(in_SystemException Is Nothing, io_Config("CompletionEmailMessage").ToString,
+If(in_SystemException.Message.Contains("Stage Workflow: GETEMAILINFO") ,io_Config("MISErrorEmailMessage").ToString.Replace("[MISSTAGE]","MISEXTRACTION"),""))+
+Environment.NewLine+
+Environment.NewLine+
+"Best Regards,"+
+Environment.NewLine+
+Environment.NewLine+
+"BB8"
+
+This notification is to alert you that the [vDateFiledFromDate] run has been completed.
