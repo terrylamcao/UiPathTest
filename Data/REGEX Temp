@@ -6,3 +6,6 @@ Provide street address for this person \(including apartment number\)\s*Street:\
 
 - Street address for a current person
 Provide the street address\s+Street:\s+([^.]*)\s*\.\s+City:\s+([^.]*)\s*\.\s+State:\s+([^.]*)\s*\.\s+Country:\s+(.*?)\s+Zip Code:\s+(\d+)\s*\.
+
+- Section 12 extract all:
+Section 12 - Where You Went To School([\s\S]*?)Section 13A - Employment Activities
