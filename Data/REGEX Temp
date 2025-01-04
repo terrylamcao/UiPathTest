@@ -1,6 +1,12 @@
 - Section 11 extract all
 Section 11 - Where You Have Lived([\s\S]*?)Section 12 - Where You Went To School
 
+1\. Enter residence information([\s\S]*?)2\.
+Section 11 - Subpart
+2\. ([\s\S]*?)3\.
+
+
+
 - Street address for a person who know you
 Provide street address for this person \(including apartment number\)\s*Street:\s*([^.]*) \.\s*City:\s*([^.]*) \.\s*State:\s*([^.]*) \.\s*Country:\s*([^.]*)\s*Zip Code:\s*(\d+)
 
