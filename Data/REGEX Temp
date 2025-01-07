@@ -2,8 +2,17 @@
 Section 11 - Where You Have Lived([\s\S]*?)Section 12 - Where You Went To School
 
 1\. Enter residence information([\s\S]*?)2\.
-Section 11 - Subpart
-2\. ([\s\S]*?)3\.
+Section 11 - 
+  Entry 1:
+  1\. Enter residence information\.\s*([\s\S]*?)2\.
+
+  Entries 2 - n
+  2\. ([\s\S]*?)3\.
+
+  Final Entry:
+  [ENTRY]\.\s*([\s\S]*?)Section 12 - Where You Went To School
+
+  
 
 
 
