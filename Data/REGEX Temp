@@ -29,3 +29,8 @@ Section 12 - Where You Went To School([\s\S]*?)Section 13A - Employment Activiti
   Degree\/diploma:\s*([^.]*)\.\s*(.*?)(?=Degree\/diploma:|$)
   Getting all the dates
   Date awarded\s*Month\/Year:\s*([^\.\n]+)\s*\.
+
+
+-  Section 13: 
+-  Section 13: First to near end section:
+1\. Explanation\s*([\s\S]*?)\s*2\. Explanation
