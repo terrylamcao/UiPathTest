@@ -24,3 +24,8 @@ Provide the street address\s+Street:\s+([^.]*)\s*\.\s+City:\s+([^.]*)\s*\.\s+Sta
 
 - Section 12 extract all:
 Section 12 - Where You Went To School([\s\S]*?)Section 13A - Employment Activities
+
+  Getting all the Degree:
+  Degree\/diploma:\s*([^.]*)\.\s*(.*?)(?=Degree\/diploma:|$)
+  Getting all the dates
+  Date awarded\s*Month\/Year:\s*([^\.\n]+)\s*\.
