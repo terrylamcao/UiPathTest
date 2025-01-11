@@ -1,3 +1,14 @@
+Section 1:
+Middle Name includes (IO):
+Middle:\s*([^\s\.]+(?:\s*\([^\)]+\))?)
+
+Last Name inclues (IO):
+Last:\s*([^\s\.]+(?:\s*\([^\)]+\))?)
+
+First Name includes (IO):
+First:\s*([^\s\.]+(?:\s*\([^\)]+\))?)
+
+
 - Section 11 extract all
 Section 11 - Where You Have Lived([\s\S]*?)Section 12 - Where You Went To School
 
