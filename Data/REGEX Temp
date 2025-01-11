@@ -8,6 +8,9 @@ Last:\s*([^\s\.]+(?:\s*\([^\)]+\))?)
 First Name includes (IO):
 First:\s*([^\s\.]+(?:\s*\([^\)]+\))?)
 
+Suffix
+Suffix:\s*([^\n]+)(?:\.|$)
+
 
 - Section 11 extract all
 Section 11 - Where You Have Lived([\s\S]*?)Section 12 - Where You Went To School
