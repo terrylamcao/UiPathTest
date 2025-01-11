@@ -10,6 +10,7 @@ First:\s*([^\s\.]+(?:\s*\([^\)]+\))?)
 
 Suffix
 Suffix:\s*([^\n]*?)\s*(?:\.\s*|$)
+Suffix:\s*([^.\r\n]+)\.?
 
 
 - Section 11 extract all
