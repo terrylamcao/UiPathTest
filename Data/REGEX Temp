@@ -9,7 +9,7 @@ First Name includes (IO):
 First:\s*([^\s\.]+(?:\s*\([^\)]+\))?)
 
 Suffix
-Suffix:\s*([^\n]+)(?:\.|$)
+Suffix:\s*([^\n]*?)\s*(?:\.\s*|$)
 
 
 - Section 11 extract all
