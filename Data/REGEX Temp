@@ -12,6 +12,14 @@ Suffix
 Suffix:\s*([^\n]*?)\s*(?:\.\s*|$)
 Suffix:\s*([^.\r\n]+)\.?
 
+Section 5:
+HAve you use other name
+Yes:\s*{[^.]*}\s*\.
+No:\s*{[^.]*}\s*\.
+
+Section 6:
+Female:\s*{\s*(x\s*Box\s*IS\s*Checked!|Box\s*NOT\s*Checked!)\s*}\s*\.
+Male:\s*{\s*(x\s*Box\s*IS\s*Checked!|Box\s*NOT\s*Checked!)\s*}\s*\.
 
 - Section 11 extract all
 Section 11 - Where You Have Lived([\s\S]*?)Section 12 - Where You Went To School
