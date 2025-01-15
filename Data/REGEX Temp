@@ -18,6 +18,7 @@ Yes:\s*{[^.]*}\s*\.
 No:\s*{[^.]*}\s*\.
 
 Section 6:
+Sex: Back uo
 Female:\s*{\s*(x\s*Box\s*IS\s*Checked!|Box\s*NOT\s*Checked!)\s*}\s*\.
 Male:\s*{\s*(x\s*Box\s*IS\s*Checked!|Box\s*NOT\s*Checked!)\s*}\s*\.
 
